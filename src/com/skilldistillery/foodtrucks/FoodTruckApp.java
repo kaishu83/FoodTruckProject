@@ -102,7 +102,7 @@ public class FoodTruckApp {
 		int rate = trucks[0].getRate();
 		while (trucks[i] != null && i < 6) {
 			if (trucks[i].getRate() > rate) {
-
+				rate = trucks[i].getRate();
 				index = i;
 			}
 			i++;

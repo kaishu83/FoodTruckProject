@@ -37,38 +37,42 @@ public class FoodTruckApp {
 			System.out.println("FoodTruck " + trucks[i].getName() + " created!\n");
 			i++;
 		}
+		if (trucks[0] != null) {
+			app.PrintTrucks(trucks);
 
-		app.PrintTrucks(trucks);
+			int j = 0;
+			while (j != 4) {
+				app.Menu();
+				j = input.nextInt();
+				switch (j) {
+					case 1:
 
-		int j = 0;
-		while (j != 4) {
-			app.Menu();
-			j = input.nextInt();
-			switch (j) {
-				case 1:
+						app.PrintTrucks(trucks);
+						break;
+					case 2:
 
-					app.PrintTrucks(trucks);
-					break;
-				case 2:
+						System.out.println("The average rating for these foodtrucks is " + app.AverageRate(trucks));
+						System.out.println();
+						break;
+					case 3:
+						System.out.println("Truck with highest rate is: ");
+						System.out.println(app.HighestRate(trucks).toString());
+						System.out.println();
+						break;
+					case 4:
 
-					System.out.println("The average rating for these foodtrucks is " + app.AverageRate(trucks));
-					System.out.println();
-					break;
-				case 3:
-					System.out.println("Truck with highest rate is: ");
-					System.out.println(app.HighestRate(trucks).toString());
-					System.out.println();
-					break;
-				case 4:
-
-					app.PrintGoodbye();
-					System.out.println();
-					break;
-				default:
-					System.out.println("Wrong option, please choose again");
-					System.out.println();
+						app.PrintGoodbye();
+						System.out.println();
+						break;
+					default:
+						System.out.println("Wrong option, please choose again");
+						System.out.println();
+				}
 			}
+		} else {
+			System.out.println("You entered 0 truck, goodbye");
 		}
+		input.close();
 	}
 
 	public void Welcome() {

@@ -5,17 +5,18 @@ import java.util.*;
 public class FoodTruckApp {
 
 	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
 
 		FoodTruckApp app = new FoodTruckApp();
 
 		FoodTruck[] trucks = new FoodTruck[5];
 
-		Scanner input = new Scanner(System.in);
 		app.Welcome();
+
 		int i = 0;
 
 		while (i < 6) {
-			trucks[i] = new FoodTruck(i + 1, "name", 0, "food");
+			trucks[i] = new FoodTruck("name", 0, "food");
 
 			System.out.println(
 					"Please enter the name of your next FoodTruck, enter \"quit\" to if don't have another truck to enter");

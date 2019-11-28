@@ -7,12 +7,14 @@ public class FoodTruck {
 	private int rate;
 
 	private String food;
+	private static int nextId = 1;
 
 // C O N S T R U C T O R
 
-	public FoodTruck(int id, String name, int rate, String food) {
+	public FoodTruck(String name, int rate, String food) {
 		super();
-		this.id = id;
+		this.id = nextId;
+		nextId++;
 		this.name = name;
 		this.rate = rate;
 		this.food = food;
